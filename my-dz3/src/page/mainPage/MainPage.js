@@ -5,15 +5,15 @@ class  MainPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = ({menuStatus: false});
-        this.handleMenu = this.handleMenu.bind(this)
+        this.state = ({newsStatus: false});
+        this.clickNews = this.clickNews.bind(this)
 
     }
 
 
     news = ["book", "pen", "bagk"];
-    handleMenu() {
-        this.setState ({menuStatus: !this.state.newsStatus})
+    clickNews() {
+        this.setState ({newsStatus: !this.state.newsStatus})
     }
     
     render() {
@@ -21,9 +21,9 @@ class  MainPage extends React.Component {
         <>
             <h2> Main - {this.props.main} </h2>
             <News news = {this.news}/>
-            {this.state.menuStatus === true ? <News/> :""  }
+            {this.state.newsStatus === true ? <News/> :""  }
 
-            <button onClick={this.handleMenu}>news</button>
+            <button onClick={this.clickNews}>news</button>
 
         </>
 
